@@ -35,7 +35,7 @@
 									<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-location-arrow"></span></div>
 									<div class="text"><span>Address</span><span>551 Pleasant Hill Rd A-1, Lilburn, GA 30047</span></div>
 								</div>
-							</div>
+							>/div>
 							<div class="col">
 								<div class="top-wrap d-flex">
 									<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-location-arrow"></span></div>
@@ -47,7 +47,7 @@
 					    		<p class="mb-0 d-flex">
 					    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
 					    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-					    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+					    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></pan></a>
 					    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
 					    		</p>
 				        </div>
@@ -57,7 +57,7 @@
 				</div>
 			</div>
 		</div>
-		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+#	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	    
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,47 +103,55 @@
 							<div class="row no-gutters">
 								<div class="col-md-7 d-flex">
 									<div class="contact-wrap w-100 p-md-5 p-4">
-										<h3 class="mb-4">Get in touch</h3>
-										<form method="POST" id="contactForm" class="contactForm">
-											<div class="row">
-												<div class="col-md-6">
-													<div class="form-group">
-														<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-													</div>
-												</div>
-												<div class="col-md-6"> 
-													<div class="form-group">
-														<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-													</div>
-												</div>
-												<div class="col-md-12">
-													<div class="form-group">
-														<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-													</div>
-												</div>
-												<div class="col-md-12">
-													<div class="form-group">
-														<textarea name="message" class="form-control" id="message" cols="30" rows="7" placeholder="Message"></textarea>
-													</div>
-												</div>
-												<div class="col-md-12">
-													<div class="form-group">
-														<input type="submit" value="Send Message" class="btn btn-primary">
-														<div class="submitting"></div>
-													</div>
-												</div>
-											</div>
-										</form>
-									</div>
+										<h3 class="mb-4">Book a service</h3>
+										<div id="cal-booking-inline" style="width:100%;min-height:600px;overflow:scroll"></div>
+										<script type="text/javascript">
+											(function (C, A, L) {
+												let p = function (a, ar) { a.q.push(ar); };
+												let d = C.document;
+												C.Cal = C.Cal || function () {
+													let cal = C.Cal;
+													let ar = arguments;
+													if (!cal.loaded) {
+														cal.ns = {};
+														cal.q = cal.q || [];
+														d.head.appendChild(d.createElement("script")).src = A;
+														cal.loaded = true;
+													}
+													if (ar[0] === L) {
+														const api = function () { p(api, arguments); };
+														const namespace = ar[1];
+														api.q = api.q || [];
+														if (typeof namespace === "string") {
+															cal.ns[namespace] = cal.ns[namespace] || api;
+															p(cal.ns[namespace], ar);
+															p(cal, ["initNamespace", namespace]);
+														} else p(cal, ar);
+														return;
+													}
+													p(cal, ar);
+											};
+										})(window, "https://app.cal.com/embed/embed.js", "init");
+										Cal("init", { origin: "https://cal.com" });
+										Cal("inline", {
+											elementOrSelector: "#cal-booking-inline",
+											calLink: "kaais/15min",
+											config: { layout: "month_view" }
+									});
+										Cal("ui", {
+										styles: { branding: { brandColor: "#F96D00" } },
+										hideEventTypeDetails: false
+									});
+									</script>
 								</div>
-								<div class="col-md-5 d-flex align-items-stretch">
-									<div class="info-wrap bg-primary w-100 p-lg-5 p-4">
-										<h3 class="mb-4 mt-md-4">Contact us</h3>
+							<div class="col-md-5 d-flex align-items-stretch">
+								<div class="info-wrap bg-primary w-100 p-lg-5 p-4">
+									<h3 class="mb-4 mt-md-4">Contact us</h3>
 					        	<div class="dbox w-100 d-flex align-items-start">
 					        		<div class="icon d-flex align-items-center justify-content-center">
 					        			<span class="fa fa-map-marker"></span>
 					        		</div>
-					        		<div class="text pl-3">
+					        		<div class "="text pl-3">
 						            <p><span>Address:</span> 198 West 21th Street, Suite 551 Pleasant Hill Rd A-1, Lilburn, GA 30047</p>
 						          </div>
 					          </div>
@@ -157,7 +165,7 @@
 					          </div>
 					        	<div class="dbox w-100 d-flex align-items-center">
 					        		<div class="icon d-flex align-items-center justify-content-center">
-					        			<span class="fa fa-paper-plane"></span>
+					        		<span class="fa fa-paper-plane"></span>
 					        		</div>
 					        		<div class="text pl-3">
 						            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
@@ -172,7 +180,7 @@
 						          </div>
 					          </div>
 				          </div>
-								</div>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -224,7 +232,7 @@
           </div>
           <div class="col-md-6 col-lg">
              <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Business Hours</h2>
+              <h2 class="ftco-heading-2">Business Hours</Ïh2>
               <div class="opening-hours">
               	<h4>Opening Days:</h4>
               	<p class="pl-3">
